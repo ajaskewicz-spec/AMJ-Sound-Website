@@ -2,6 +2,6 @@
   "name": "amj-sound-website",
   "compatibility_date": "2026-08-20",
   "assets": {
-    "directory": "."
+    "directory": "./dist"
   }
 }
