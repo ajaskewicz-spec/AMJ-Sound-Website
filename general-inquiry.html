@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Inquiries — AMJ Sound Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #15140f;
+    --bg-raised: #1c1b14;
+    --amber: #e8a33d;
+    --teal: #3f7373;
+    --cream: #f2efe6;
+    --cream-dim: #b8b4a6;
+    --line: #35331f;
+    --radius: 2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--cream);
+    font-family:'Source Serif 4', serif; line-height:1.6; overflow-x:hidden;
+    min-height:100vh; display:flex; flex-direction:column;
+  }
+  h1,h2, .btn, .tag{
+    font-family:'Oswald', sans-serif; text-transform:uppercase; letter-spacing:0.04em;
+  }
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--amber); outline-offset:3px;
+  }
+  @media (prefers-reduced-motion: reduce){ *{animation-duration:0.001ms !important;} }
+
+  /* ===== NAV ===== */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(21,20,15,0.92); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-wrap{
+    max-width:1200px; margin:0 auto; padding:18px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{font-size:1.05rem; font-weight:700; letter-spacing:0.08em; display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .logo .dot{width:8px; height:8px; border-radius:50%; background:var(--amber); box-shadow:0 0 8px var(--amber);}
+  .back-link{
+    font-size:0.8rem; font-weight:500; color:var(--cream-dim); text-decoration:none;
+    display:flex; align-items:center; gap:8px; transition:color .2s;
+  }
+  .back-link:hover{color:var(--amber);}
+
+  main{flex:1; display:flex; align-items:center; justify-content:center; padding:60px 24px;}
+  .wrap{max-width:560px; width:100%;}
+  .tag{color:var(--teal); font-size:0.78rem; font-weight:600; letter-spacing:0.16em; margin-bottom:14px; display:block;}
+  h1{font-size:clamp(1.9rem,4vw,2.6rem); font-weight:700; color:var(--cream); margin-bottom:14px;}
+  .wrap > p{color:var(--cream-dim); font-size:1.05rem; margin-bottom:36px; max-width:48ch;}
+
+  form{background:var(--bg-raised); border:1px solid var(--line); border-radius:4px; padding:36px;}
+  .field{margin-bottom:18px;}
+  .field:last-of-type{margin-bottom:26px;}
+  .field label{display:block; font-size:0.75rem; letter-spacing:0.08em; color:var(--cream-dim); margin-bottom:8px; font-family:'Oswald',sans-serif;}
+  .field input, .field textarea{
+    width:100%; background:var(--bg); border:1px solid var(--line); color:var(--cream);
+    padding:12px 14px; font-family:'Source Serif 4',serif; font-size:0.95rem; border-radius:2px;
+  }
+  .field input:focus, .field textarea:focus{border-color:var(--amber); outline:none;}
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+
+  .btn{
+    display:inline-block; padding:14px 28px; font-size:0.82rem; font-weight:600;
+    border-radius:var(--radius); text-decoration:none; transition:transform .15s, background .15s;
+    cursor:pointer; border:none; width:100%; text-align:center;
+  }
+  .btn-teal{background:var(--teal); color:var(--cream);}
+  .btn-teal:hover{transform:translateY(-2px); background:#4a8484;}
+
+  footer{border-top:1px solid var(--line); padding:28px 24px; text-align:center; color:var(--cream-dim); font-size:0.78rem;}
+
+  @media (max-width:520px){
+    .two-col{grid-template-columns:1fr;}
+    form{padding:26px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="live-sound-site.html" class="logo"><span class="dot"></span>AMJ SOUND ENGINEERING</a>
+    <a href="live-sound-site.html" class="back-link">&larr; Back to site</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="tag">Not Booking Yet?</span>
+    <h1>General Inquiries</h1>
+    <p>Got a quick question before you fill out the full event form? Send it here and we'll get back to you.</p>
+
+    <form action="https://formspree.io/f/xgawqlpo" method="POST">
+      <div class="two-col">
+        <div class="field"><label for="gname">Name</label><input id="gname" name="name" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="gemail">Email</label><input id="gemail" name="email" type="email" placeholder="you@email.com" required></div>
+      </div>
+      <div class="field"><label for="gphone">Phone</label><input id="gphone" name="phone" type="tel" placeholder="(XXX) XXX-XXXX"></div>
+      <div class="field"><label for="gmsg">Message</label><textarea id="gmsg" name="message" rows="4" placeholder="What's your question?" required></textarea></div>
+      <input type="hidden" name="_subject" value="General inquiry from AMJ Sound Engineering website">
+      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+      <button type="submit" class="btn btn-teal">Send Message</button>
+    </form>
+  </div>
+</main>
+
+<footer>
+  © 2026 AMJ Sound Engineering. All rights reserved.
+</footer>
+
+</body>
+</html>

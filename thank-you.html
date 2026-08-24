@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanks — Signal &amp; Stage Audio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #15140f;
+    --bg-raised: #1c1b14;
+    --amber: #e8a33d;
+    --teal: #3f7373;
+    --cream: #f2efe6;
+    --cream-dim: #b8b4a6;
+    --line: #35331f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--cream);
+    font-family:'Source Serif 4', serif;
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    padding:24px;
+  }
+  a:focus-visible, button:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){ *{animation-duration:0.001ms !important;} }
+
+  .card{
+    max-width:520px; width:100%; text-align:center;
+    border:1px solid var(--line); background:var(--bg-raised);
+    padding:56px 40px; border-radius:4px;
+  }
+  .logo{
+    font-family:'Oswald', sans-serif; text-transform:uppercase; letter-spacing:0.08em;
+    font-size:0.9rem; color:var(--cream-dim); display:flex; align-items:center; justify-content:center; gap:10px;
+    margin-bottom:40px;
+  }
+  .logo .dot{width:8px; height:8px; border-radius:50%; background:var(--amber); box-shadow:0 0 8px var(--amber);}
+
+  .mark{
+    width:64px; height:64px; margin:0 auto 28px; border-radius:50%;
+    border:1px solid var(--teal); display:flex; align-items:center; justify-content:center;
+    animation: popIn .5s ease both;
+  }
+  .mark svg{width:26px; height:26px;}
+  @keyframes popIn{ from{opacity:0; transform:scale(0.7);} to{opacity:1; transform:scale(1);} }
+
+  .eyebrow{
+    font-family:'Oswald', sans-serif; text-transform:uppercase; letter-spacing:0.16em;
+    font-size:0.75rem; color:var(--teal); font-weight:600; margin-bottom:14px;
+  }
+  h1{
+    font-family:'Oswald', sans-serif; text-transform:uppercase; letter-spacing:0.03em;
+    font-size:clamp(1.6rem, 4vw, 2.1rem); font-weight:700; color:var(--cream); margin-bottom:18px;
+  }
+  p{color:var(--cream-dim); font-size:1.02rem; max-width:38ch; margin:0 auto 34px;}
+
+  .meta{
+    font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:var(--cream-dim);
+    border-top:1px solid var(--line); padding-top:22px; margin-top:8px;
+    display:flex; justify-content:space-between; text-align:left;
+  }
+  .meta .k{color:var(--teal);}
+
+  .btn{
+    display:inline-block; padding:14px 30px; font-family:'Oswald',sans-serif; font-weight:600;
+    font-size:0.82rem; letter-spacing:0.04em; text-transform:uppercase;
+    background:var(--amber); color:#1a1204; text-decoration:none; border-radius:2px;
+    transition:transform .15s;
+  }
+  .btn:hover{transform:translateY(-2px);}
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="logo"><span class="dot"></span>SIGNAL &amp; STAGE AUDIO</div>
+
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#3f7373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+
+    <div class="eyebrow">Inquiry Received</div>
+    <h1>Thanks — we've got it.</h1>
+    <p>Your event details are through to the desk. We typically reply within 1–2 business days with availability and a quote.</p>
+
+    <a href="live-sound-site.html" class="btn">Back to the Site</a>
+
+    <div class="meta">
+      <span><span class="k">STATUS</span> Sent</span>
+      <span><span class="k">RESPONSE TIME</span> 1–2 business days</span>
+    </div>
+  </div>
+
+</body>
+</html>
