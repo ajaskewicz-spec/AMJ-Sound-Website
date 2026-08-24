@@ -1,5 +1,5 @@
 {
-  "AMJ-Sound-Site": "AMJ-Sound-Site",
+  "name": "AMJ-Sound-Site",
   "compatibility_date": "2026-08-20",
   "assets": {
     "directory": "./dist"
