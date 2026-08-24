@@ -100,6 +100,22 @@
     <p>Got a quick question before you fill out the full event form? Send it here and we'll get back to you.</p>
 
     <form action="https://formspree.io/f/xgawqlpo" method="POST">
+      <script>
+document.querySelector("form").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new FormData(form);
+
+  await fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: { "Accept": "application/json" }
+  });
+
+  window.location.href = "inquiry-landing.html";
+});
+</script>
       <div class="two-col">
         <div class="field"><label for="gname">Name</label><input id="gname" name="name" type="text" placeholder="Your name" required></div>
         <div class="field"><label for="gemail">Email</label><input id="gemail" name="email" type="email" placeholder="you@email.com" required></div>
