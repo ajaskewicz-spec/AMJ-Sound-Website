@@ -1,19 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Live Sound Engineering — AMJ Sound Engineering</title>
-<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/assets/icons/favicon-32x32.png" sizes="32x32">
-<link rel="icon" href="/assets/icons/favicon.ico">
-  <meta property="og:title" content="AMJ Sound Engineering" />
-  <meta property="og:description" content="Professional live sound engineering and audio services for bands, venues, events, and productions throughout New Jersey and the surrounding area." />
-  <meta property="og:image" content="https://amjsound.com/assets/logo/AMJSoundLogoHiRes500x500px.png" />
-  <meta property="og:url" content="https://amjsound.com" />
-  <meta property="og:type" content="website" />
-</head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>AMJ Sound Engineering — Coming Soon</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -28,561 +18,127 @@
     --radius: 2px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
   body{
-    background:var(--bg);
-    color:var(--cream);
-    font-family:'Source Serif 4', serif;
-    line-height:1.6;
+    background:var(--bg); color:var(--cream);
+    font-family:'Source Serif 4', serif; line-height:1.6;
+    min-height:100vh; display:flex; flex-direction:column;
     overflow-x:hidden;
   }
-  h1,h2,h3, .display, .fader-label, nav a, .btn, .tag{
-    font-family:'Oswald', sans-serif;
-    text-transform:uppercase;
-    letter-spacing:0.04em;
+  h1,.tag,.btn{
+    font-family:'Oswald', sans-serif; text-transform:uppercase; letter-spacing:0.04em;
   }
-  .mono{font-family:'JetBrains Mono', monospace;}
-  a{color:inherit;}
-  img{max-width:100%; display:block;}
+  a:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){ *{animation-duration:0.001ms !important;} }
 
-  /* focus visibility */
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
-    outline:2px solid var(--amber);
-    outline-offset:3px;
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
-  }
-
-  /* ===== NAV ===== */
+  /* ===== HEADER ===== */
   header{
-    position:sticky; top:0; z-index:100;
-    background:rgba(21,20,15,0.92);
-    backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
+    padding:20px 24px;
+    display:flex; align-items:center; justify-content:center;
   }
-  .nav-wrap{
-    max-width:1200px; margin:0 auto; padding:18px 24px;
-    display:flex; align-items:center; justify-content:space-between;
+  .logo{
+    font-family:'Oswald',sans-serif; font-size:1.05rem; font-weight:700;
+    letter-spacing:0.08em; display:flex; align-items:center; gap:10px;
+    text-decoration:none; color:var(--cream);
   }
-  .logo{font-size:1.05rem; font-weight:700; letter-spacing:0.08em; display:flex; align-items:center; gap:10px;}
-  .logo .dot{width:8px; height:8px; border-radius:50%; background:var(--amber); box-shadow:0 0 8px var(--amber);}
-  nav ul{list-style:none; display:flex; gap:28px;}
-  nav a{font-size:0.8rem; font-weight:500; color:var(--cream-dim); text-decoration:none; transition:color .2s;}
-  nav a:hover{color:var(--amber);}
-  .nav-toggle{display:none; background:none; border:1px solid var(--line); color:var(--cream); font-size:1.2rem; padding:6px 12px; cursor:pointer; border-radius:2px;}
-  .mobile-nav{
-    display:none; list-style:none; flex-direction:column;
-    border-top:1px solid var(--line); background:var(--bg);
+  .logo .dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--amber); box-shadow:0 0 8px var(--amber);
   }
-  .mobile-nav.open{display:flex;}
-  .mobile-nav li a{
-    display:block; padding:16px 24px; color:var(--cream-dim); text-decoration:none;
-    font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.04em; text-transform:uppercase;
-    border-bottom:1px solid var(--line);
-  }
-  .mobile-nav li a:active{color:var(--amber);}
 
-  /* ===== HERO ===== */
-  .hero{
-    position:relative;
-    max-width:1200px; margin:0 auto;
-    padding:100px 24px 80px;
-    display:grid; grid-template-columns: 1.1fr 0.9fr; gap:60px; align-items:center;
+  /* ===== MAIN ===== */
+  main{
+    flex:1; display:flex; align-items:center; justify-content:center;
+    padding:60px 24px; text-align:center;
   }
-  .eyebrow{
-    color:var(--amber); font-size:0.78rem; font-weight:600; letter-spacing:0.18em;
-    display:flex; align-items:center; gap:10px; margin-bottom:22px;
+  .wrap{max-width:520px; width:100%;}
+
+  /* Animated signal bars */
+  .signal{
+    display:flex; align-items:flex-end; justify-content:center;
+    gap:5px; height:40px; margin:0 auto 36px; width:fit-content;
   }
-  .eyebrow::before{content:''; width:28px; height:1px; background:var(--amber);}
-  .hero h1{
-    font-size:clamp(2.6rem, 5.2vw, 4.2rem);
-    line-height:1.03; font-weight:700; color:var(--cream); max-width:11ch;
+  .bar{
+    width:8px; border-radius:2px; background:var(--teal);
+    animation: pulse 1.2s ease-in-out infinite;
   }
-  .hero h1 em{
-    font-style:normal; color:var(--amber);
+  .bar:nth-child(1){height:40%; animation-delay:0s;}
+  .bar:nth-child(2){height:70%; animation-delay:0.15s;}
+  .bar:nth-child(3){height:100%; background:var(--amber); animation-delay:0.3s;}
+  .bar:nth-child(4){height:70%; animation-delay:0.45s;}
+  .bar:nth-child(5){height:40%; animation-delay:0.6s;}
+  @keyframes pulse{
+    0%,100%{opacity:0.35; transform:scaleY(0.6);}
+    50%{opacity:1; transform:scaleY(1);}
   }
-  .hero p.lede{
-    font-family:'Source Serif 4', serif; font-size:1.15rem; color:var(--cream-dim);
-    max-width:46ch; margin:26px 0 34px;
+
+  .tag{color:var(--teal); font-size:0.78rem; font-weight:600; letter-spacing:0.16em; margin-bottom:14px; display:block;}
+  h1{font-size:clamp(2rem,5vw,3rem); font-weight:700; color:var(--cream); margin-bottom:18px;}
+  .lede{color:var(--cream-dim); font-size:1.05rem; max-width:40ch; margin:0 auto 36px;}
+
+  .card{
+    background:var(--bg-raised); border:1px solid var(--line);
+    border-radius:4px; padding:28px 32px; margin-bottom:32px;
+    font-family:'JetBrains Mono',monospace; font-size:0.82rem;
+    color:var(--cream-dim); display:flex; flex-direction:column; gap:12px;
   }
-  .btn-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .card .row{display:flex; justify-content:space-between; align-items:center;}
+  .card .row .k{color:var(--teal);}
+  .card .row .v{color:var(--cream);}
+
+  .cta-label{color:var(--cream-dim); font-size:1rem; margin-bottom:16px;}
+
   .btn{
     display:inline-block; padding:14px 28px; font-size:0.82rem; font-weight:600;
-    border-radius:var(--radius); text-decoration:none; transition:transform .15s, background .15s;
-    cursor:pointer; border:1px solid transparent;
+    border-radius:var(--radius); text-decoration:none; transition:transform .15s;
+    cursor:pointer; border:none;
+    background:var(--amber); color:#1a1204;
   }
-  .btn-primary{background:var(--amber); color:#1a1204;}
-  .btn-primary:hover{transform:translateY(-2px);}
-  .btn-ghost{border-color:var(--line); color:var(--cream);}
-  .btn-ghost:hover{border-color:var(--amber); color:var(--amber);}
-  .btn-teal{background:var(--teal); color:var(--cream);}
-  .btn-teal:hover{transform:translateY(-2px); background:#4a8484;}
+  .btn:hover{transform:translateY(-2px);}
 
-  /* Reusable image placeholder */
-  .placeholder-box{
-    background:var(--bg-raised); border:1px solid var(--line); border-radius:6px;
-    display:flex; align-items:center; justify-content:center; text-align:center;
-    color:var(--cream-dim); font-family:'JetBrains Mono',monospace; font-size:0.75rem;
-    letter-spacing:0.04em; padding:20px;
-  }
-  .hero-media{min-height:340px;}
-
-  section{max-width:1200px; margin:0 auto; padding:100px 24px;}
-  .section-head{margin-bottom:52px; max-width:60ch;}
-  .tag{color:var(--teal); font-size:0.78rem; font-weight:600; letter-spacing:0.16em; margin-bottom:14px; display:block;}
-  .section-head h2{font-size:clamp(1.9rem,3vw,2.6rem); font-weight:700; color:var(--cream);}
-  .section-head p{color:var(--cream-dim); margin-top:16px; font-size:1.05rem;}
-
-  hr.rule{border:none; border-top:1px solid var(--line); max-width:1200px; margin:0 auto;}
-
-  /* ===== SERVICES as channel strips ===== */
-  .services{display:flex; flex-direction:column; border-top:1px solid var(--line);}
-  .service-row{
-    display:grid; grid-template-columns: 90px 1fr 1.4fr; gap:32px; align-items:start;
-    padding:32px 0; border-bottom:1px solid var(--line);
-  }
-  .service-row .fader-label{color:var(--amber); font-size:0.85rem; font-weight:700;}
-  .service-row h3{font-size:1.25rem; color:var(--cream); font-weight:600; margin-bottom:10px; text-transform:none; letter-spacing:0;}
-  .service-row p{color:var(--cream-dim); font-size:0.98rem; max-width:52ch;}
-
-  /* ===== PACKAGES ===== */
-  .packages{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  .pkg{
-    background:var(--bg-raised); border:1px solid var(--line); padding:36px 28px;
-    display:flex; flex-direction:column; border-radius:4px; position:relative;
-  }
-  .pkg.featured{border-color:var(--amber);}
-  .pkg .badge{
-    position:absolute; top:-12px; right:24px; background:var(--amber); color:#1a1204;
-    font-size:0.68rem; font-weight:700; padding:4px 10px; border-radius:2px; letter-spacing:0.08em;
-  }
-  .pkg h3{font-size:1.1rem; color:var(--cream); margin-bottom:8px;}
-  .pkg .price{font-family:'JetBrains Mono',monospace; color:var(--amber); font-size:1.6rem; margin:14px 0 18px;}
-  .pkg ul{list-style:none; margin:0 0 26px; flex:1;}
-  .pkg li{
-    font-size:0.9rem; color:var(--cream-dim); padding:9px 0 9px 20px; position:relative;
-    border-top:1px solid var(--line);
-  }
-  .pkg li:first-child{border-top:none;}
-  .pkg li::before{content:'—'; position:absolute; left:0; color:var(--teal);}
-
-  /* ===== GALLERY ===== */
-  .gallery-grid{
-    display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:150px; gap:8px;
-  }
-  .gallery-grid div{
-    background:var(--bg-raised); border:1px solid var(--line);
-    display:flex; align-items:center; justify-content:center;
-    color:var(--cream-dim); font-family:'JetBrains Mono',monospace; font-size:0.72rem;
-  }
-  .gallery-grid div:nth-child(1){grid-column:span 2; grid-row:span 2;}
-  .gallery-grid div:nth-child(6){grid-column:span 2;}
-
-  /* ===== ABOUT ===== */
-  .about{display:grid; grid-template-columns:0.8fr 1.2fr; gap:60px; align-items:center;}
-  .about .photo{
-    aspect-ratio:4/5; background:var(--bg-raised); border:1px solid var(--line);
-    display:flex; align-items:center; justify-content:center; color:var(--cream-dim); font-family:'JetBrains Mono',monospace; font-size:0.75rem;
-  }
-  .about p{color:var(--cream-dim); font-size:1.02rem; margin-bottom:16px;}
-  .stat-row{display:flex; gap:40px; margin-top:30px;}
-  .stat .num{font-family:'JetBrains Mono',monospace; color:var(--amber); font-size:1.8rem; display:block;}
-  .stat .label{font-size:0.72rem; color:var(--cream-dim); letter-spacing:0.08em;}
-
-  /* ===== TESTIMONIALS ===== */
-  .testimonials{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  .quote{background:var(--bg-raised); border:1px solid var(--line); padding:30px; border-radius:4px;}
-  .quote p{font-style:italic; color:var(--cream); font-size:1rem; margin-bottom:18px;}
-  .quote .who{font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--teal);}
-
-  /* ===== GEAR (compact) ===== */
-  .gear-section{padding-top:0; padding-bottom:56px;}
-  .gear-list{list-style:none;}
-  .gear-list li{
-    padding:10px 0; border-top:1px solid var(--line); color:var(--cream-dim); font-size:0.92rem;
-  }
-  .gear-list li:first-child{border-top:none;}
-  .gear-list strong{color:var(--cream); font-weight:600;}
-
-  /* ===== FAQ ===== */
-  .faq-item{border-bottom:1px solid var(--line);}
-  .faq-item summary{
-    cursor:pointer; padding:22px 0; font-family:'Oswald',sans-serif; font-weight:600;
-    font-size:1rem; color:var(--cream); display:flex; justify-content:space-between; align-items:center;
-    list-style:none;
-  }
-  .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-item summary::after{content:'+'; color:var(--amber); font-size:1.3rem; transition:transform .2s;}
-  .faq-item[open] summary::after{transform:rotate(45deg);}
-  .faq-item .a{padding-bottom:22px; color:var(--cream-dim); max-width:64ch;}
-
-  /* ===== CONTACT ===== */
-  .contact-wrap{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:stretch;}
-  .contact-media{min-height:100%; border-radius:4px;}
-  .field{margin-bottom:18px;}
-  .field label{display:block; font-size:0.75rem; letter-spacing:0.08em; color:var(--cream-dim); margin-bottom:8px; font-family:'Oswald',sans-serif;}
-  .field input, .field select, .field textarea{
-    width:100%; background:var(--bg-raised); border:1px solid var(--line); color:var(--cream);
-    padding:12px 14px; font-family:'Source Serif 4',serif; font-size:0.95rem; border-radius:2px;
-  }
-  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--amber); outline:none;}
-  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
-
-  footer{border-top:1px solid var(--line); padding:36px 24px; text-align:center; color:var(--cream-dim); font-size:0.78rem;}
-
-  @media (max-width:900px){
-    nav{display:none;}
-    .nav-toggle{display:block;}
-    .hero{grid-template-columns:1fr; padding-top:48px; padding-bottom:56px; gap:40px;}
-    .hero-media{order:-1;}
-    .packages{grid-template-columns:1fr;}
-    .service-row{grid-template-columns:56px 1fr; gap:18px;}
-    .service-row h3, .service-row p{grid-column:2/3;}
-    .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:130px;}
-    .gallery-grid div:nth-child(1){grid-column:span 2; grid-row:span 1;}
-    .about{grid-template-columns:1fr;}
-    .about .photo{aspect-ratio:16/10;}
-    .testimonials{grid-template-columns:1fr;}
-    .contact-wrap{grid-template-columns:1fr; gap:36px;}
-    .two-col{grid-template-columns:1fr;}
-    section{padding:56px 20px;}
-    .btn-row{flex-direction:column; align-items:stretch;}
-    .btn{text-align:center; padding:16px 24px;}
-    .nav-wrap{padding:14px 20px;}
-    .logo{font-size:0.85rem;}
-  }
-  @media (max-width:480px){
-    .hero h1{max-width:none;}
-    .hero-media{min-height:240px;}
+  /* ===== FOOTER ===== */
+  footer{
+    border-top:1px solid var(--line); padding:24px;
+    text-align:center; color:var(--cream-dim); font-size:0.78rem;
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="nav-wrap">
-    <div class="logo"><span class="dot"></span>AMJ SOUND ENGINEERING</div>
-    <nav>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gear">Gear</a></li>
-        <li><a href="#packages">Packages</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="general-inquiry.html">Questions</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">☰</button>
-  </div>
-  <ul id="mobile-nav" class="mobile-nav">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#gear">Gear</a></li>
-    <li><a href="#packages">Packages</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="general-inquiry.html">Questions</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div class="logo"><span class="dot"></span>AMJ SOUND ENGINEERING</div>
 </header>
 
-<div class="hero">
-  <div>
-    <div class="eyebrow">Full-Service Live Sound</div>
-    <h1>Every mix,<br><em>run live</em>, start to finish.</h1>
-    <p class="lede">Gear, setup, and a dedicated engineer at the desk for the whole event — concerts, weddings, corporate stages, and everything between. Your sound, handled professionally from setup to the final cue.</p>
-    <div class="btn-row">
-      <a href="#contact" class="btn btn-primary">Get a Quote</a>
-      <a href="#packages" class="btn btn-ghost">View Packages</a>
-    </div>
-  </div>
-  <div class="hero-media placeholder-box">Hero Image Placeholder<br>(rig / stage / console photo)</div>
-</div>
+<main>
+  <div class="wrap">
 
-<hr class="rule">
+    <div class="signal" aria-hidden="true">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
 
-<section id="services">
-  <div class="section-head">
-    <span class="tag">What We Run</span>
-    <h2>Services</h2>
-    <p>Every booking is full-service: equipment sized to the room, and a dedicated engineer at the desk from load-in to load-out.</p>
-  </div>
-  <div class="services">
-    <div class="service-row">
-      <div class="fader-label">CH01</div>
-      <h3>PA Systems &amp; Mixing</h3>
-      <p>Point-source PA or Line Arrays* sized to your venue, run through a digital console for clean, even coverage across the room.<br>*Line Arrays are provided via trusted rental sources.</p>
-    </div>
-    <div class="service-row">
-      <div class="fader-label">CH02</div>
-      <h3>Microphones</h3>
-      <p>Wired handheld and instrument microphones — for speeches, performers, panels, or a full band.</p>
-    </div>
-    <div class="service-row">
-      <div class="fader-label">CH03</div>
-      <h3>Monitor Mixes</h3>
-      <p>Individual monitor wedges so performers hear themselves clearly on stage, no matter what's happening out front.</p>
-    </div>
-    <div class="service-row">
-      <div class="fader-label">CH04</div>
-      <h3>Stage &amp; Signal Management</h3>
-      <p>Snakes, DI boxes, stage boxes, and cable runs handled and hidden cleanly — no clutter, no tripping hazards.</p>
-    </div>
-    <div class="service-row">
-      <div class="fader-label">CH05</div>
-      <h3>On-Site Engineering</h3>
-      <p>An engineer is present the entire event, not just for drop-off — live mixing and troubleshooting happen in real time.</p>
-    </div>
-    <div class="service-row">
-      <div class="fader-label">AUX</div>
-      <h3>Recording &amp; Mixing</h3>
-      <p>Professional multitrack recording is available upon request for live performances and events, with mixing and mastering services available for a polished final product.</p>
-    </div>
-  </div>
-</section>
+    <span class="tag">Coming Soon</span>
+    <h1>Website Under Construction</h1>
+    <p class="lede">We're building something worth hearing. Check back soon — the site is on its way.</p>
 
-<section id="gear" class="gear-section">
-  <details class="faq-item">
-    <summary>Gear We Run</summary>
-    <div class="a">
-      <ul class="gear-list">
-        <li><strong>PA / Speakers:</strong> [e.g. QSC K12.2, dual 18" subs]</li>
-        <li><strong>Mixing Console:</strong> [e.g. Behringer X32]</li>
-        <li><strong>Microphones:</strong> [e.g. Shure SM58, SM57, Beta 58]</li>
-        <li><strong>Monitors:</strong> [e.g. 4x QSC K10 stage wedges]</li>
-        <li><strong>DI Boxes &amp; Snakes:</strong> [list your signal gear]</li>
-        <li><strong>Stands &amp; Cabling:</strong> [list mic stands, cable runs, etc.]</li>
-      </ul>
+    <div class="card">
+      <div class="row"><span class="k">STATUS</span><span class="v">In Progress</span></div>
+      <div class="row"><span class="k">SERVICE</span><span class="v">Full-Service Live Sound</span></div>
+      <div class="row"><span class="k">REGION</span><span class="v">Tristate Area</span></div>
     </div>
-  </details>
-</section>
 
-<hr class="rule">
-
-<section id="packages">
-  <div class="section-head">
-    <span class="tag">Pricing</span>
-    <h2>Packages</h2>
-    <p>Built around guest count and input channels. Every tier includes delivery, setup, teardown, and a full-time engineer — final quotes confirmed after a quick call. Line array systems available through trusted third-party rental partners for larger productions.</p>
-  </div>
-  <div class="packages">
-    <div class="pkg">
-      <h3>Essential</h3>
-      <p style="color:var(--cream-dim); font-size:0.88rem;">Small gatherings, speeches, intimate ceremonies — up to 75 guests</p>
-      <div class="price">From $249</div>
-      <ul>
-        <li>Compact PA system</li>
-        <li>1-8 microphones</li>
-        <li>1 engineer, up to 4 hrs</li>
-      </ul>
-      <a href="#contact" class="btn btn-ghost" style="text-align:center;">Ask About This</a>
-    </div>
-    <div class="pkg featured">
-      <span class="badge">Most Booked</span>
-      <h3>Standard</h3>
-      <p style="color:var(--cream-dim); font-size:0.88rem;">Weddings, corporate events, mid-size venues — up to 200 guests</p>
-      <div class="price">From $350</div>
-      <ul>
-        <li>Full PA + monitor system</li>
-        <li>Up to 16 mic/input channels</li>
-        <li>1 engineer, up to 6 hrs</li>
-      </ul>
-      <a href="#contact" class="btn btn-primary" style="text-align:center;">Ask About This</a>
-    </div>
-    <div class="pkg">
-      <h3>Premium</h3>
-      <p style="color:var(--cream-dim); font-size:0.88rem;">Concerts, large events, multi-act shows — 200+ guests</p>
-      <div class="price">From $XXX</div>
-      <ul>
-        <li>Line array PA + full monitors</li>
-        <li>18+ mic/input channels</li>
-        <li>1–2 engineers, full-day</li>
-      </ul>
-      <a href="#contact" class="btn btn-ghost" style="text-align:center;">Ask About This</a>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<section id="gallery">
-  <div class="section-head">
-    <span class="tag">Recent Work</span>
-    <h2>Gallery</h2>
+    <p class="cta-label">In the meantime, reach us directly:</p>
+    <a href="mailto:eventservices@amjsound.com" class="btn">eventservices@amjsound.com</a>
 
   </div>
-  <div class="gallery-grid">
-    <div>Photo 1</div>
-    <div>Photo 2</div>
-    <div>Photo 3</div>
-    <div>Photo 4</div>
-    <div>Photo 5</div>
-    <div>Photo 6</div>
-    <div>Photo 7</div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<section id="about">
-  <div class="about">
-    <div class="photo">Headshot / On-site photo</div>
-    <div>
-      <span class="tag">Who's Behind the Desk</span>
-      <h2 style="font-size:2rem; font-weight:700; color:var(--cream); margin-bottom:20px;">About AMJ Sound Engineering</h2>
-      <p>Andrew has been running live sound since age 15, covering everything from backyard parties to theatrical productions. AMJ Sound was built on one idea: sound should be seamless and reliable, meaning artists, performers, and event organizers to focus on what they do best while we handle the sound.</p>
-      <p>We show up early, test everything before doors open, and stay attentive for the whole event — not just setup. Events can change quickly, and unexpected issues or last-minute adjustments can happen at any time. We stay present and prepared to adapt, troubleshoot, and keep everything running smoothly.</p>
-      <div class="stat-row">
-        <div class="stat"><span class="num">3+</span><span class="label">YEARS RUNNING SOUND</span></div>
-        <div class="stat"><span class="num">100+</span><span class="label">EVENTS MIXED</span></div>
-        <div class="stat"><span class="num">Tristate Area</span><span class="label">SERVICE REGION</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<section id="testimonials">
-  <div class="section-head">
-    <span class="tag">Word Of Mouth</span>
-    <h2>What Clients Say</h2>
-  </div>
-  <div class="testimonials">
-    <div class="quote">
-      <p>"Quote from a past client about sound quality, reliability, or professionalism goes here."</p>
-      <div class="who">— NAME, WEDDING</div>
-    </div>
-    <div class="quote">
-      <p>"Quote from a past client about sound quality, reliability, or professionalism goes here."</p>
-      <div class="who">— NAME, CORPORATE EVENT</div>
-    </div>
-    <div class="quote">
-      <p>"Quote from a past client about sound quality, reliability, or professionalism goes here."</p>
-      <div class="who">— NAME, CONCERT</div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<section id="faq">
-  <div class="section-head">
-    <span class="tag">Good To Know</span>
-    <h2>FAQ</h2>
-  </div>
-  <div>
-    <details class="faq-item">
-      <summary>Do you provide the equipment, or do I need my own?</summary>
-      <div class="a">Everything is full-service — we bring all gear and run it ourselves. No standalone rentals.</div>
-    </details>
-    <details class="faq-item">
-      <summary>How far in advance should I book?</summary>
-      <div class="a">4–6 weeks for most events, 2–3 months for weddings in peak season.</div>
-    </details>
-    <details class="faq-item">
-      <summary>What's your service area?</summary>
-      <div class="a">We proudly serve clients throughout the Tri-State Area, with a primary focus on Somerset County, New Jersey and surrounding regions.</div>
-    </details>
-    <details class="faq-item">
-      <summary>Do you require a deposit?</summary>
-      <div class="a">Any applicable deposit requirements and payment details will be discussed during the initial phone consultation.</div>
-    </details>
-    <details class="faq-item">
-      <summary>Can you work with our venue's in-house AV team?</summary>
-      <div class="a">Absolutely. We’re happy to work alongside venue in-house AV teams and coordinate with their staff throughout the event. We have experience integrating with existing AV systems and working within venue-specific setups, ensuring everyone is on the same page and the production runs smoothly.</div>
-    </details>
-  </div>
-</section>
-
-<hr class="rule">
-
-<section id="contact">
-  <div class="section-head" style="display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap;">
-    <div>
-      <span class="tag">Book The Date</span>
-      <h2>Let's Talk About Your Event</h2>
-      <p>Send your event date, venue, and guest count — we'll put together a quote.</p>
-    </div>
-<a href="general-inquiry.html" 
-  class="btn btn-teal" 
-  style="white-space:nowrap;">Not Booking Yet?
-</a>
-  </div>
-  <div class="contact-wrap">
-    <form action="https://formspree.io/f/xwleznpr" method="POST" _redirect="https://amj-sound-website.ajaskewicz.workers.dev/thank-you">
-      <script>
-document.querySelector("form").addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const form = e.target;
-  const data = new FormData(form);
-
-  await fetch(form.action, {
-    method: "POST",
-    body: data,
-    headers: { "Accept": "application/json" }
-  });
-
-  window.location.href = "thank-you.html";
-});
-        </script>
-      <div class="two-col">
-        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
-        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@email.com" required></div>
-      </div>
-      <div class="two-col">
-        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="(XXX) XXX-XXXX"></div>
-        <div class="field"><label for="date">Event Date</label><input id="date" name="event_date" type="date"></div>
-      </div>
-      <div class="two-col">
-        <div class="field">
-          <label for="type">Event Type</label>
-          <select id="type" name="event_type">
-            <option>Wedding</option>
-            <option>Concert</option>
-            <option>Corporate</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="field"><label for="guests">Guest Count</label><input id="guests" name="guest_count" type="number" placeholder="e.g. 120"></div>
-      </div>
-      <div class="field"><label for="venue">Venue / Location</label><input id="venue" name="venue" type="text" placeholder="Venue name or city"></div>
-      <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="4" placeholder="Tell us about the event..."></textarea></div>
-      <input type="hidden" name="_subject" value="New inquiry from AMJ Sound Engineering website">
-      <button type="submit" class="btn btn-primary">Send Inquiry</button>
-    </form>
-    <div class="placeholder-box contact-media">Image Placeholder<br>(gear, event, or team photo)</div>
-  </div>
-</section>
+</main>
 
 <footer>
   © 2026 AMJ Sound Engineering. All rights reserved.
 </footer>
-
-<script>
-  // Mobile nav toggle
-  const toggle = document.querySelector('.nav-toggle');
-  const mobileNav = document.querySelector('.mobile-nav');
-  if (toggle && mobileNav) {
-    toggle.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      toggle.textContent = isOpen ? '✕' : '☰';
-    });
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = '☰';
-      });
-    });
-  }
-
-</script>
 
 </body>
 </html>
